@@ -82,6 +82,8 @@ void functionTwo(){
     }    
     else if(digit<1 || digit >9){
         cout<<"Invalid !!"<<endl;
+        functionTwo(); // ask for input again if invalid
+        return;
     }
 
     //checking if the space is open if it's x's turn
@@ -96,7 +98,8 @@ void functionTwo(){
     }
     else{
         cout<<"There is no empty space!"<<endl;
-        functionTwo();
+        functionTwo(); // ask for input again if space is not empty
+        return;
     }
     functionOne();
 }

@@ -9,7 +9,7 @@ char token = 'x';
 string n1 = "";
 string n2 = "";
 
-void functionOne(){
+void boardPrinter(){
     cout<<"tt     |     |     \n";
     cout<<"tt  "<<board[0][0]<<"  | "<<board[0][1]<<"   |  "<<board[0][2]<<" \n";
     cout<<"tt_____|_____|_____\n";
@@ -21,7 +21,7 @@ void functionOne(){
     cout<<"tt     |     |     \n";
 }
 
-void functionTwo(){
+void turnTaker(){
     int digit;
 
     if(token=='x')
@@ -82,7 +82,7 @@ void functionTwo(){
     }    
     else if(digit<1 || digit >9){
         cout<<"Invalid !!"<<endl;
-        functionTwo(); // ask for input again if invalid
+        turnTaker(); // ask for input again if invalid
         return;
     }
 
@@ -97,14 +97,14 @@ void functionTwo(){
         token='x';
     }
     else{
-        cout<<"There is no empty space!"<<endl;
-        functionTwo(); // ask for input again if space is not empty
+        cout<<"There is not empty space!"<<endl;
+        turnTaker(); // ask for input again if space is not empty
         return;
     }
-    functionOne();
+    //boardPrinter();
 }
 
-bool functionThree()
+bool gameOver()
 {
     for(int i = 0; i < 3; i++)
     {
@@ -146,10 +146,10 @@ int main()
     cout<<n1<<" is player one so they will play first.\n";
     cout<<n2<<" is player two so they will play second.\n";
 
-    while (!functionThree())
+    while (!gameOver())
     {
-        functionOne();
-        functionTwo();
+        boardPrinter();
+        turnTaker();
     }
 
     if(token == 'x' && tie == false)

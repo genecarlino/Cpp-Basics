@@ -25,3 +25,5 @@ int main(){
     std::cout << "SetValuePassingInAPointer(&x): " << x << std::endl;
     return 0;
 }
+
+//video:https://www.youtube.com/watch?v=P2_z98wEU6M&list=PLvv0ScY6vfd-R9N-vIDXdd4HO9IYATIxJ&index=5

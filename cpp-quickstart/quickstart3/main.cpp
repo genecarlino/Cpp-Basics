@@ -28,10 +28,13 @@ int main(int argc, char* argv[]){
             std::stringstream stream (line);
             //break out each individual component
             //based off of spaces
+            std::string chunk;
+            while(stream >> chunk){
+               std::cout << chunk << std::endl; 
+            }
             std::cout <<line<<std::endl;
             }
-        }
-        
+        }  
     }
     inputFile.close();
 
